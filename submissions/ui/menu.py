@@ -173,3 +173,17 @@ class MainMenu:
             return "quit"
         
         return None
+
+ self.music_toggle = MusicToggleButton(
+    x=SCREEN_WIDTH - 150,
+    y=20,
+    width=120,
+    height=50
+ )
+
+ # In draw():
+ self.music_toggle.draw(screen)
+
+ # In handle_click():
+ if self.music_toggle.handle_click(mouse_pos, mouse_pressed):
+    sound_manager.enabled = self.music_toggle.get_state()
